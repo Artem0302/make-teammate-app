@@ -1,17 +1,17 @@
 /**
  * @format
  */
-import { AppRegistry } from 'react-native'
-import App from '@app/app'
-import { name as appName } from './app.json'
+import {AppRegistry} from 'react-native';
+import App from '@app/app';
+import {name as appName} from './app.json';
 
 // eslint-disable-next-line react/prop-types
-function HeadlessCheck({ isHeadless }) {
-    if (isHeadless) {
-        return null
-    }
+function HeadlessCheck({isHeadless}) {
+  if (isHeadless) {
+    return null;
+  }
 
-    return <App />
+  return <App />;
 }
 
-AppRegistry.registerComponent(appName, () => HeadlessCheck)
+AppRegistry.registerComponent(appName, () => HeadlessCheck);
