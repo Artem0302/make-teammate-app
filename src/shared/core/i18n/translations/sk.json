@@ -1,0 +1,692 @@
+{
+  "entities-legacy": {
+    "android": {
+      "permissions": {
+        "granted": "Umožnite stiahnutie súboru."
+      }
+    },
+    "language": {
+      "errors": {
+        "restore": "Zlyhalo obnovenie nastavení jazyka. Nastavili sme predvolené nastavenia!",
+        "setting": "Oops... Niečo sa pokazilo! Skúste to prosím znova!"
+      }
+    },
+    "network-connection": {
+      "errors": {
+        "cant-check": "Prepáčte, nepodarilo sa overiť vaše pripojenie.",
+        "unavailable": "Zdá sa, že sieť je stále nedostupná"
+      },
+      "loading": "Skontrolujeme vaše pripojenie",
+      "success": "Internetové pripojenie bolo obnovené"
+    },
+    "permissions": {
+      "camera": {
+        "error": "Nepodarilo sa požiadať o povolenie kamery."
+      }
+    }
+  },
+  "entities": {
+    "accounts": {
+      "errors": {
+        "unable-to-load": "Nepodarilo sa načítať vaše účty"
+      }
+    },
+    "cards": {
+      "errors": {
+        "loading-list": "Nepodarilo sa načítať vaše karty"
+      }
+    },
+    "contracts": {
+      "errors": {
+        "loading-list": "Nepodarilo sa načítať vaše zmluvy"
+      }
+    }
+  },
+  "features": {
+    "modals": {
+      "share-acc": {
+        "btn": "Kopírovať číslo",
+        "header": "Osobný účet",
+        "qr": "Už čoskoro"
+      }
+    }
+  },
+  "screens": {
+    "auth": {
+      "confirmation": {
+        "title": "Nové prihlásenie na účet"
+      }
+    },
+    "home": {
+      "bottomSheet-title": "Transakcie",
+      "title": "Domov"
+    },
+    "login": {
+      "footer": {
+        "subtitle": "Ak máte nejaké ťažkosti, volajte: ",
+        "title": "Nesdávajte svoje heslo nikomu"
+      },
+      "inputs": {
+        "phone-country": "Prihlásenie"
+      },
+      "subtitle": "Zadajte svoje prihlasovacie údaje (telefónne číslo) a heslo na pokračovanie",
+      "title": "Vitajte"
+    },
+    "new-password": {
+      "confirmation": "Potvrdenie hesla",
+      "subtitle": "Vytvorte nové heslo pre svoje mobilné bankovníctvo",
+      "title": "Vytvorenie nového hesla"
+    },
+    "no-internet": {
+      "title": "Žiadne pripojenie na internet"
+    },
+    "phone": {
+      "verification": {
+        "btn": "Zaslať kód znova",
+        "methods": {
+          "errors": {
+            "code-send": "Odosielanie OTP zlyhalo. Skontrolujte svoju sieť a skúste to znova.",
+            "invalid-id": "Niečo sa pokazilo, prosím, reštartujte svoju aplikáciu"
+          },
+          "success": "Nový kód bol odoslaný"
+        },
+        "phrases": {
+          "no-code": "Nedostali ste kód?",
+          "retry": "Zatiaľ žiadny kód? Získajte ďalší"
+        },
+        "subtitle": "Poslali sme vám SMS s overovacím kódom na",
+        "title": "Overenie telefónneho čísla"
+      }
+    },
+    "pin-code": {
+      "components": {
+        "confirm": "Potvrďte váš PIN kód",
+        "first-step": "Vytvorte si váš PIN kód",
+        "new": "Nastavte si nový PIN kód",
+        "saved": "Zadajte váš PIN kód"
+      },
+      "title": "PIN kód"
+    },
+    "profile": {
+      "birth-date": "Dátum narodenia",
+      "change": {
+        "password": "Zmeniť heslo",
+        "pin": "Zmeniť PIN"
+      },
+      "contracts": {
+        "item": {
+          "subtitle": "Podpísané ",
+          "title": "{{contract_type}} zmluva o účte {{lang}}"
+        },
+        "no-contracts": "Zatiaľ nemáte k dispozícii žiadne zmluvy",
+        "title": "Zmluvy"
+      },
+      "lang": "Jazyk",
+      "nationality": "Národnosť",
+      "phone": "Telefónne číslo",
+      "pid": "PID",
+      "title": "Profil"
+    },
+    "registration": {
+      "email": {
+        "fail": "Odoslanie e-mailu zlyhalo. Skúste to neskôr znova.",
+        "input": "Zadajte e-mailovú adresu",
+        "sent": "Na vašu e-mailovú adresu sme vám poslali 6-miestny overovací kód.",
+        "verify": "Potvrďte svoj e-mail"
+      },
+      "expired": "Kód vypršal. Skúste začať znova!",
+      "instruction": {
+        "create": {
+          "account": {
+            "btn": "Otvoriť účet",
+            "step2": "Vyplňte registračný formulár",
+            "step3": "Gratulujeme! Ste užívateľom systému Arbipay",
+            "title": "Kroky otvorenia účtu"
+          },
+          "card": {
+            "btn": "Otvoriť kartu",
+            "step2": "Vyplňte formulár",
+            "step3": "Gratulujeme! Vydali ste kartu Arbipay",
+            "title": "Kroky otvorenia karty"
+          }
+        },
+        "step": "Kroky registrácie:",
+        "step1": "Prejdite na webovú stránku - kliknite na tlačidlo Registrácia",
+        "step2": "Vyplňte registračný formulár",
+        "step3": "Gratulujeme! Ste užívateľom systému Arbipay"
+      },
+      "phone": {
+        "fail": "Odoslanie SMS zlyhalo, skúste to znova neskôr",
+        "no-started": "Relácia registrácie ešte nezačala. Skúste to znova!",
+        "sent": "Poslali sme vám 6-miestny overovací kód na vaše telefónne číslo",
+        "verify": "Overte svoje telefónne číslo"
+      },
+      "send": "Odoslať overovací kód",
+      "subtitle": "Prejdite všetkými krokmi registračného procesu",
+      "success": {
+        "default": {
+          "subtitle": "Pokračujte ďalej a overte svoj e-mail.",
+          "title2": "Overenie telefónneho čísla dokončené"
+        },
+        "step2": {
+          "subtitle": "Dokončite registráciu stlačením tlačidla 'Registrácia'.",
+          "title": "Overte svoj e-mail",
+          "title2": "Overenie e-mailu dokončené"
+        },
+        "step3": {
+          "subtitle": "Na vaše telefónne číslo sme poslali jednorazové heslo. Teraz sa môžete prihlásiť do svojho účtu.",
+          "title": "Úspešne registrovaný v Arbipay ."
+        },
+        "step4": {
+          "subtitle": "Skúste znova proces registrácie.",
+          "title": "Registrácia v Arbipay zlyhala."
+        }
+      },
+      "title": "Proces registrácie"
+    },
+    "system-error": {
+      "btn": "Domov",
+      "error": "Chyba systému"
+    },
+    "transactions": {
+      "download-file": {
+        "errors": {
+          "not-exist": "Nepodarilo sa stiahnuť potvrdenie o transakcii, skúste načítať zo stránky",
+          "unknown": "Niečo sa pokazilo, skúste to znova neskôr"
+        },
+        "success": "PDF súbor bol úspešne uložený"
+      }
+    },
+    "transfer": {
+      "pushes": {
+        "messages": {
+          "type": {
+            "accepted": "Transakcia",
+            "unaccepted": "Potvrďte svoju platbu"
+          }
+        }
+      },
+      "title": "Platba"
+    },
+    "verification": {
+      "btn": "Začať overenie",
+      "btns": {
+        "fail": "Zopakovať overenie",
+        "success": "Prejsť na účet"
+      },
+      "camera": {
+        "default": {
+          "description": "Umiestnite svoju tvár do stredu rámu. Zachyťte fotografiu iba svojej tváre",
+          "title": "Urobte selfie"
+        },
+        "id-back": {
+          "description": "Zachyťte zadnú stranu občianskeho preukazu",
+          "title": "Zachyťte zadnú stranu občianskeho preukazu"
+        },
+        "id-front": {
+          "description": "Zachyťte prednú stranu občianskeho preukazu s vašou fotografiou.",
+          "title": "Zachyťte prednú stranu občianskeho preukazu"
+        },
+        "passport": {
+          "description": "Zachyťte hlavnú stranu vášho pasu, ktorá obsahuje zónu MRZ.",
+          "title": "Zachyťte pas"
+        }
+      },
+      "confirm-identity": {
+        "body": {
+          "condition": "Dobré osvetlenie",
+          "subtitle": "Občiansky preukaz alebo pas",
+          "title": "Pripravte si: "
+        },
+        "btn": "Overiť moju identitu",
+        "footer": {
+          "btn": "Zásady ochrany osobných údajov",
+          "subtitle": "a súhlasím s ",
+          "subtitle2": "spoločnosti Arbitas",
+          "title": "Potvrdzujem, že som prečítal "
+        },
+        "header": {
+          "subtitle": "Pre prístup k vášmu účtu musíte dokončiť proces overenia identity.",
+          "title": "Potvrďte svoju identitu"
+        },
+        "warning": "Prejsť na ochranu osobných údajov"
+      },
+      "confirmation": {
+        "0": "Vaše údaje šifrujeme a posielať ich na overenie.",
+        "1": "Vaše údaje budú použité len na overenie vašej identity.",
+        "2": "Kontrolujeme, že váš dokument je zreteľne čitateľný.",
+        "3": "Kontrolujeme, že váš dokument nie je poškodený vonkajšími vplyvmi a všetky požadované označenia sú viditeľné.",
+        "4": "Kontrolujeme, že údaje vo vašom dokumente nie sú zastienené tieňmi ani svetelnými lúčmi.",
+        "5": "Kontrolujeme, že obraz tváre je zreteľne viditeľný vo vašom dokumente.",
+        "6": "Skenujeme text a špeciálne značky na dokumente.",
+        "7": "Overujeme autenticitu a platnosť údajov.",
+        "8": "Kontrolujeme stav vášho dokumentu a údaje v registroch.",
+        "9": "Vaše údaje šifrujeme a prenášame na konečné schválenie.",
+        "10": "Overenie trvá dlhšie ako sa očakávalo. Prosím, počkajte, už zostáva len pár okamihov.",
+        "subtitle": "Momentálne spracovávame vašu žiadosť o KYC a budeme vás informovať, ako len dostaneme výsledky. Vášu trpezlivosť a pochopenie počas tohto procesu si veľmi ceníme.",
+        "title": "Prebieha analýza tváre"
+      },
+      "doc-type": {
+        "id-card": "Občiansky preukaz",
+        "passport": "Pas",
+        "select-btn": {
+          "country": {
+            "label": "Krajina vydania",
+            "placeholder": "Vyberte krajinu"
+          },
+          "doc": {
+            "label": "Typ dokladu",
+            "placeholder": "Vyberte typ dokladu"
+          }
+        },
+        "subtitle": "Vyberte krajinu vydania a typ dokladu",
+        "title": "Zachytenie dokumentu"
+      },
+      "email": {
+        "subtitle": "Počkajte na upozornenie e-mailom",
+        "title": "Vaša žiadosť sa spracováva"
+      },
+      "instruction": {
+        "step1": "Prejdite na web - kliknite na tlačidlo Spustiť overovanie",
+        "step2": "Odfotografovať váš pas alebo občiansky preukaz a selfie",
+        "step3": "Počkajte na potvrdenie overenia a začnite plne používať aplikáciu"
+      },
+      "no-plug": {
+        "subtitle": "Pre získanie všetkých výhod aplikácie prejdite overením.",
+        "title": "Zdá sa, že nie ste overení"
+      },
+      "photo-check": {
+        "confirmation": {
+          "btn": "Spustiť",
+          "header": {
+            "subtitle": "Musíme overiť, či osoba na vašom doklade ste skutočne vy.",
+            "title": "Urobte selfie: "
+          },
+          "mistakes": {
+            "1": "Príliš rozmazané",
+            "2": "Zlé osvetlenie",
+            "3": "Nie neutrálna tvár",
+            "title": "Zabráňte chybám počas fotenia selfie"
+          }
+        },
+        "fail": "Overenie vašej fotky zlyhalo, skúste to prosím neskôr",
+        "selfie": {
+          "no": "Uistite sa, že zachytená fotografia je jasne viditeľná a údaje sú čitateľné.",
+          "yes": "Uistite sa, že tvár na zachytenej snímke je jasne viditeľná. Pošlite, ak je kvalita obrazu prijateľná"
+        },
+        "title": "Skontrolujte kvalitu obrázka"
+      },
+      "subtitles": {
+        "fail": "Opakujte proces overovania totožnosti alebo kontaktujte náš tím podpory",
+        "success": "Teraz môžete prejsť do vášho účtu"
+      },
+      "title": "Kroky overenia",
+      "titles": {
+        "fail": "Overenie vašej totožnosti zlyhalo",
+        "success": "Overenie vašej totožnosti bolo úspešné"
+      }
+    }
+  },
+  "shared-legacy": {
+    "statuses": {
+      "process": "Čaká sa",
+      "rejected": "Zamietnuté",
+      "success": "Prijaté"
+    },
+    "validations": {
+      "email": "Neplatná e-mailová adresa",
+      "password": {
+        "min": "Heslo musí obsahovať aspoň 8 znakov",
+        "regex": {
+          "capital": "Heslo musí obsahovať aspoň jedno veľké písmeno",
+          "lowercase": "Heslo musí obsahovať aspoň jedno malé písmeno",
+          "special": "Heslo musí obsahovať aspoň jeden špeciálny znak"
+        }
+      }
+    }
+  },
+  "shared": {
+    "common": {
+      "acc-type": {
+        "business": "Obchodné",
+        "personal": "Osobné"
+      },
+      "phrase": {
+        "call": "Ak máte nejaké ťažkosti, zavolajte",
+        "not-share-pswrd": "Nesdávajte svoje heslo nikomu.",
+        "welcome": "Vitajte"
+      },
+      "questions": {
+        "not-acc": "Nemáte účet?"
+      }
+    },
+    "copy": {
+      "error": "Nepodarilo sa skopírovať {{text}}. Skúste to znova!",
+      "success": "{{text}} bol úspešne skopírovaný!",
+      "values": {
+        "card-num": "Číslo karty",
+        "phone": "Telefón"
+      }
+    },
+    "errors": {
+      "default-error": "Oops, niečo sa pokazilo... Skúste to znova!",
+      "default-error-without-ops": "Niečo sa pokazilo... Skúste to znova!",
+      "oops": "Ups...",
+      "statuses": {
+        "13": "Autorizácia zlyhala. Skúste to znova o niekoľko minút.",
+        "14": "Relácia vypršala.",
+        "67": "Vaša aplikácia je aktuálna.",
+        "68": "Pre túto verziu systému nie je dostupná žiadna verzia aplikácie.",
+        "85": "Pokladňa nebola nájdená.",
+        "96": "Na vašom účte nie sú dostatočné finančné prostriedky.",
+        "97": "Spracovanie transakcie zlyhalo. Skúste to znova o chvíľu.",
+        "202": "Klient nebol nájdený.",
+        "203": "Peňaženka nebola nájdená.",
+        "205": "Nemožno vytvoriť klienta.",
+        "1000": "Na tomto zariadení neboli nájdení žiadni klienti.",
+        "1001": "Identifikácia zariadenia zlyhala. Skúste to znova.",
+        "1002": "Klient nebol nájdený.",
+        "1003": "Zariadenie a klient nie sú prepojené.",
+        "1004": "Pre toto zariadenie už existuje aktívna herná relácia.",
+        "1005": "Váš zostatok v peňaženke sa spracováva.",
+        "1007": "Relácia neexistuje.",
+        "1100": "Žiadne aktívne ťaženie nebolo nájdené.",
+        "1101": "Ťažba momentálne nie je k dispozícii.",
+        "1102": "Na vašom účte nie sú dostatočné finančné prostriedky.",
+        "1103": "Došlo k chybe. Skúste to znova.",
+        "1104": "Čas vypršal. Skúste to znova.",
+        "1105": "Zlyhalo načítanie údajov. Skúste to znova o niekoľko minút.",
+        "1106": "Peňaženka nebola nájdená. Skúste to znova.",
+        "1107": "Pre túto verziu systému už existuje verzia aplikácie.",
+        "1108": "Je k dispozícii nová verzia aplikácie.",
+        "1110": "Dodávateľ nebol nájdený.",
+        "1111": "Peňaženka nebola nájdená.",
+        "session-status": "Relácia nie je aktívna. Prihláste sa prosím znova."
+      }
+    },
+    "logout": {
+      "alert": {
+        "answers": {
+          "No": "Nie",
+          "Yes": "Áno"
+        },
+        "question": "Chcete sa odhlásiť?"
+      },
+      "bug": "Ups... Pri odhlasovaní sa vyskytli nejaké problémy. Skúste to neskôr alebo znovu nainštalujte aplikáciu."
+    },
+    "permissions": {
+      "location": {
+        "code": "Kód",
+        "denied": "Povolenie na lokalitu bolo zamietnuté, skúste to znova",
+        "disabled": {
+          "alerts": {
+            "btn-text": "Prejsť na nastavenia",
+            "explanation": "'Arbipay' vám pomáha kontrolovať vašu aktuálnu polohu",
+            "question": "Povoliť „Arbipay“ prístup k vašej polohe?"
+          }
+        },
+        "errors": {
+          "access-bug": "Nemožno získať prístup k vašej polohe.",
+          "getting-location-bug": "Došlo k chybe, skúste to znova.",
+          "settings-access": "Nemožno otvoriť nastavenia, skúste to znova"
+        },
+        "never-ask-again": "Povolenie na lokalitu bolo odobrané, povolenia znova"
+      }
+    },
+    "ui": {
+      "btns": {
+        "cancel": "Zrušiť",
+        "change-password": "Zmeniť heslo",
+        "close": "Zavrieť",
+        "confirm": "Potvrdiť",
+        "continue": "Pokračovať",
+        "go-back": "Ísť späť",
+        "login": "Odhlásiť",
+        "logout": "Odhlásiť",
+        "no": "Nie",
+        "ok": "Ok",
+        "register": "Registrácia",
+        "send": "Odoslať",
+        "sign-in": "Prihlásiť sa",
+        "submit": "Odoslať",
+        "try-again": "Skúsiť znova",
+        "yes": "Áno"
+      },
+      "countries-modal": {
+        "input-placeholder": "Hľadať"
+      },
+      "datepicker": {
+        "date-bug": "Neplatný dátum, skúste to znova!",
+        "title": "Vybrať"
+      },
+      "inputs": {
+        "amount": {
+          "label": "Suma"
+        },
+        "code": {
+          "err-label": "Kód je príliš krátky.",
+          "label": "Overovací kód",
+          "placeholder": "Zadajte váš kód"
+        },
+        "description": {
+          "label": "Popis transakcie"
+        },
+        "iban": {
+          "errors": {
+            "invalid": "Neplatný IBAN",
+            "same-with-acc": "IBAN musí byť odlišný od aktuálneho účtu"
+          },
+          "label": "IBAN (Príjemca)"
+        },
+        "password": {
+          "label": "Heslo",
+          "placeholder": "Zadajte vaše heslo"
+        },
+        "phone-country": {
+          "errors": {
+            "label": "Číslo je príliš krátke.",
+            "undefined-country": "Nemožno automaticky zistiť vašu krajinu."
+          },
+          "placeholder": "Telefónne číslo"
+        }
+      }
+    }
+  },
+  "widgets-legacy": {
+    "avatar": {
+      "copy": "bolo skopírované",
+      "title": "Váš účet"
+    },
+    "btns": {
+      "switch": {
+        "beneficiary": {
+          "company": "Spoločnosť",
+          "individual": "Fyzická osoba"
+        }
+      }
+    },
+    "camera-permission": {
+      "access": "Prosím, povolte prístup k fotoaparátu",
+      "btn": "Otvoriť nastavenia",
+      "error": "Chyba fotoaparátu",
+      "not-open": "Ľutujeme, nepodarilo sa nám otvoriť nastavenia"
+    },
+    "lang": {
+      "en": "Angličtina",
+      "sk": "Slovenčina"
+    },
+    "modals": {
+      "acc-choose": "Vyberte účet na prevod",
+      "lang": "Vybrať jazyk",
+      "trans-history": {
+        "no-trans": "Zatiaľ ste nevykonali žiadne transakcie."
+      }
+    },
+    "no-acc": {
+      "btn": "Vytvoriť účet",
+      "error": "Nemôžeme otvoriť odkaz",
+      "message": "Pre pokračovanie vytvorte účet",
+      "title": "Zdá sa, že nemáte žiadne účty"
+    },
+    "push-notifications": {
+      "description": "Bez prístupu k upozorneniam push nebude aplikácia fungovať",
+      "title": "Prosím, dajte prístup k upozorneniam push"
+    }
+  },
+  "widgets": {
+    "accounts": {
+      "title": "Účty",
+      "create-card": {
+        "show-process": {
+          "subtitle": "Účet v procese vytvárania",
+          "title": "Osobný účet"
+        },
+        "title": "Vytvoriť účet"
+      },
+      "type": {
+        "business": "Obchodný účet",
+        "individual": "Osobný účet"
+      }
+    },
+    "auth": {
+      "confirmation": {
+        "date": "Dátum",
+        "details": "Ak ste to vy, kliknite na tlačidlo „Potvrdiť“. Ak túto prihlášku neidentifikujete, odporúčame okamžite zmeniť svoje heslo, aby ste zabezpečili váš účet.",
+        "messages": {
+          "errors": {
+            "fail": "Zlyhanie potvrdenia autorizácie",
+            "time": "Čas na potvrdenie transakcie vypršal"
+          },
+          "success": "Autorizácia úspešne potvrdená!"
+        },
+        "subtitle": "Všimli sme si nové prihlásenie do vášho účtu",
+        "title": "Ahoj "
+      }
+    },
+    "cards": {
+      "title": "Karty",
+      "create": "Pridať kartu",
+      "footer": {
+        "title": "Arbitas s.r.o.",
+        "types": {
+          "virtual": "VIRTUÁLNA",
+          "physical": "FYZICKÁ"
+        }
+      }
+    },
+    "pin-code": {
+      "btn": "Zabudli ste PIN kód?",
+      "messages": {
+        "alerts": {
+          "subtitle": "Prekročili ste limit pokusov o zadanie PIN kódu, musíte sa znova prihlásiť",
+          "title": "Nesprávne zadaný PIN"
+        },
+        "error": "Nesprávny PIN kód, skúste to znova"
+      },
+      "modal": {
+        "subtitle": "Pre obnovenie PIN kódu sa musíte znova prihlásiť",
+        "subtitle2": "Prekročili ste limit pokusov o zadanie PIN kódu, musíte sa znova prihlásiť"
+      },
+      "subtitle": "Zadajte váš PIN kód"
+    },
+    "transactions": {
+      "item": {
+        "details": {
+          "description": {
+            "amount": "Suma",
+            "beneficiary": "Účet (Príjemca)",
+            "date": {
+              "processing": "Dátum spracovania",
+              "value": "Dátum hodnotenia"
+            },
+            "description": "Popis",
+            "download": "Stiahnuť potvrdenie",
+            "fee": "Poplatok",
+            "sender": "Účet (Odosielateľ)"
+          },
+          "errors": {
+            "fail-response": "Nepodarilo sa načítať podrobnosti o transakcii, skúste to znova neskôr",
+            "file-download": "Niečo sa pokazilo, skúste to znova neskôr",
+            "status": {
+              "canceled": "Čas vypršal, transakcia zrušená",
+              "confirmed": "Transakcia úspešne potvrdená!",
+              "exist": "Nepodarilo sa potvrdiť transakciu",
+              "not-exist": "Nepodarilo sa odpovedať na transakciu"
+            }
+          }
+        },
+        "header": {
+          "content": {
+            "canceled": "Transakcia zrušená",
+            "default": {
+              "not-time": "Čas na potvrdenie vypršal",
+              "time": "Potvrďte svoju platbu"
+            },
+            "process": "Platba sa spracováva",
+            "success": "Akceptované"
+          },
+          "title": "Z účtu"
+        },
+        "scheme": {
+          "amount": {
+            "refine": "Vedúce nuly nie sú povolené",
+            "regex": "Povolené sú iba celé čísla"
+          },
+          "issue": "Nedostatok finančných prostriedkov",
+          "max": "Nesmie mať viac ako {{characters}} znakov",
+          "min": "Musí mať aspoň {{characters}} znakov",
+          "regex": "Neplatná hodnota",
+          "required": "Povinné pole"
+        }
+      }
+    },
+    "transfer": {
+      "body": "Podrobnosti príjemcu",
+      "btns": {
+        "datepicker": "Dátum",
+        "select": "Dátum splatnosti",
+        "send": "Odoslať"
+      },
+      "components": {
+        "confirmation": {
+          "amount": "Suma",
+          "details": {
+            "description": "Popis transakcie",
+            "title": "Účet pre prevod finančných prostriedkov"
+          },
+          "iban": "IBAN (Príjemca)"
+        },
+        "sepa-form": {
+          "btns": {
+            "select": "Kód krajiny"
+          },
+          "inputs": {
+            "address": {
+              "label": "Adresa (ulica, mesto, krajina, PSČ)",
+              "placeholder": "Adresa"
+            },
+            "city": "Mesto",
+            "company": "Spoločnosť",
+            "first-name": "Meno",
+            "last-name": "Priezvisko"
+          },
+          "title": "Vyberte príjemcu"
+        }
+      },
+      "messages": {
+        "errors": {
+          "failed-response": "Počas vytvárania transakcie sa vyskytla chyba, skúste to znova neskôr",
+          "incorrect-fields": "Nie všetky polia sú správne vyplnené, skontrolujte zadané údaje!",
+          "terms-of-use": "Nepodarilo sa otvoriť odkaz"
+        },
+        "success": "Transakciu ste úspešne vytvorili"
+      },
+      "terms-of-use": {
+        "subtitle": " podmienky používania ",
+        "subtitle2": "služby",
+        "title": "Kliknutím na tlačidlo „Odoslať“,",
+        "title2": "súhlasíte s"
+      }
+    }
+  }
+}
