@@ -3,6 +3,7 @@ import {StackScreenProps} from '@react-navigation/stack';
 export type TMainNavigatorParamsList = {
   'MAIN.WELCOME_SCREEN': undefined;
   'MAIN.TAB_NAVIGATOR': undefined;
+  'MAIN.DIALOG': undefined;
 };
 
 export type TWelcomeScreenNavigatorType = StackScreenProps<
@@ -10,7 +11,12 @@ export type TWelcomeScreenNavigatorType = StackScreenProps<
   'MAIN.WELCOME_SCREEN'
 >;
 
-export type TTabNavigatorType = StackScreenProps<
+export type TDialogScreenNavigatorType = StackScreenProps<
   TMainNavigatorParamsList,
-  'MAIN.TAB_NAVIGATOR'
+  'MAIN.DIALOG'
 >;
+
+// export type TTabNavigatorType = StackScreenProps<
+//   TMainNavigatorParamsList,
+//   'MAIN.TAB_NAVIGATOR'
+// >;

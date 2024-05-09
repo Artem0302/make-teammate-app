@@ -12,7 +12,6 @@ export const MapScreen = () => {
     navigation.setOptions({
       headerLeft: () => null,
       headerRight: () => null,
-      title: 'Map',
       headerTitleStyle: {
         fontSize: 24,
         fontWeight: '700',

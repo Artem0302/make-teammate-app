@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import MapView from 'react-native-maps';
+import {Text, View} from 'react-native';
 import {TMessagesScreenNavigatorType} from '@shared/types';
+import {styles} from './messages-screen.styles';
 
 type TMessagesScreenNavProp = TMessagesScreenNavigatorType['navigation'];
 
@@ -20,5 +21,9 @@ export const MessagesScreen = () => {
     });
   }, [navigation]);
 
-  return <MapView style={{flex: 1}} />;
+  return (
+    <View style={styles.wrapper}>
+      <Text>Hello</Text>
+    </View>
+  );
 };

@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import MapView from 'react-native-maps';
+import {View, Text} from 'react-native';
 import {TProfileTabNavigatorType} from '@shared/types';
+import {styles} from './profile-screen.styles';
 
 type TMessagesScreenNavProp = TProfileTabNavigatorType['navigation'];
 
@@ -20,5 +21,9 @@ export const ProfileScreen = () => {
     });
   }, [navigation]);
 
-  return <MapView style={{flex: 1}} />;
+  return (
+    <View style={styles.wrapper}>
+      <Text>Hello</Text>
+    </View>
+  );
 };
