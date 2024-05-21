@@ -18,13 +18,19 @@ export const styles = StyleSheet.create({
     borderColor: '#000',
     borderWidth: 0.5,
   },
-  reset_text: {
+  btn_text: {
     fontWeight: '500',
     fontSize: 18,
     color: '#000',
   },
-  modal: {
-    justifyContent: 'flex-end',
-    margin: 0,
+  choose_btn: {
+    position: 'absolute',
+    bottom: 5,
+    right: 5,
+    padding: 8,
+    backgroundColor: '#FFF',
+    borderRadius: 16,
+    borderColor: '#000',
+    borderWidth: 0.5,
   },
 });

@@ -17,6 +17,6 @@ export const useDialogStore = create<IDialogStore>()(
         set(state => ({messages: [value, ...state.messages]})),
       setMessages: (value: IMessageComponent[]) => set({messages: value}),
     }),
-    {name: 'cardsStore'},
+    {name: 'dialogStore'},
   ),
 );

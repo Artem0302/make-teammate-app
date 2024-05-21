@@ -1,11 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {MainNavigator} from '@app/main-navigator ';
+import {GoogleProvider} from '@shared/core';
 
 function App() {
   return (
     <NavigationContainer>
-      <MainNavigator />
+      <GoogleProvider>
+        <MainNavigator />
+      </GoogleProvider>
     </NavigationContainer>
   );
 }
