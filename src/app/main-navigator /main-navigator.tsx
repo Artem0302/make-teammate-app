@@ -1,5 +1,6 @@
 import {TabNavigator} from '@navigation/tab-navigator';
 import {createStackNavigator} from '@react-navigation/stack';
+import {ChangeGeoScreen} from '@screens/change-geo-screen';
 import {DialogScreen} from '@screens/dialog-screen';
 import {MyGeoScreen} from '@screens/my-geo-screen';
 import {WelcomeScreen} from '@screens/welcome-screen';
@@ -30,6 +31,12 @@ export function MainNavigator() {
       <Main.Screen
         name="MAIN.DIALOG"
         component={DialogScreen}
+        options={{gestureEnabled: true, headerShown: true}}
+      />
+
+      <Main.Screen
+        name="MAIN.CHANGE_GEO_SCREEN"
+        component={ChangeGeoScreen}
         options={{gestureEnabled: true, headerShown: true}}
       />
     </Main.Navigator>

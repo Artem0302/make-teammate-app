@@ -19,18 +19,22 @@ export const styles = StyleSheet.create({
   name: {
     fontWeight: '600',
     marginBottom: 8,
+    fontSize: 16,
     color: '#000000',
+  },
+  text_wrapper: {
+    flex: 1,
+    marginLeft: 8,
+    justifyContent: 'space-between',
   },
   last_message: {
     color: '#000000',
+    maxWidth: '80%',
   },
   left_side: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  text_wrapper: {
-    marginLeft: 8,
-    justifyContent: 'space-between',
   },
   right_side: {
     flexDirection: 'row',

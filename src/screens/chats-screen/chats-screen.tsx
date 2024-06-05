@@ -1,11 +1,13 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {FlatList, ListRenderItem, View} from 'react-native';
 import {ChatComponent} from '@features/chat-component';
+import {IChat, useChatStore} from '@entities/chat';
 import {styles} from './chats-screen.styles';
 
 export const ChatsScreen = () => {
   const navigation = useNavigation();
+  const chats = useChatStore(state => state.chats);
 
   useEffect(() => {
     navigation.setOptions({
@@ -22,13 +24,17 @@ export const ChatsScreen = () => {
     });
   }, [navigation]);
 
+  const renderItem: ListRenderItem<IChat> = ({item}) => {
+    return <ChatComponent chat={item} />;
+  };
+
   return (
     <View style={styles.wrapper}>
-      <ChatComponent />
-      <ChatComponent />
-      <ChatComponent />
-      <ChatComponent />
-      <ChatComponent />
+      <FlatList
+        keyExtractor={item => item.chatId}
+        data={chats}
+        renderItem={renderItem}
+      />
     </View>
   );
 };

@@ -1,17 +1,21 @@
 import Geolocation from '@react-native-community/geolocation';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TouchableOpacity, Alert} from 'react-native';
 import MapView, {LatLng, MAP_TYPES, Marker} from 'react-native-maps';
 import {useProfileStore} from '@entities/profile';
-import {chooseLocationRequest} from '@shared/api';
-import {TMyGeoScreenNavigatorType} from '@shared/types';
-import {styles} from './my-geo-screen.styles';
+import {changeLocationRequest} from '@shared/api';
+import {TChangeGeoScreenNavigatorType} from '@shared/types';
+import {styles} from './change-geo-screen.styles';
 
-type TMyGeoScreenNavProp = TMyGeoScreenNavigatorType['navigation'];
+type TChangeGeoScreenNavProp = TChangeGeoScreenNavigatorType['navigation'];
 
-export const MyGeoScreen = () => {
-  const navigation = useNavigation<TMyGeoScreenNavProp>();
+type TChangeGeoScreenRouteProp = TChangeGeoScreenNavigatorType['route'];
+
+export const ChangeGeoScreen = () => {
+  const navigation = useNavigation<TChangeGeoScreenNavProp>();
+  const route = useRoute<TChangeGeoScreenRouteProp>();
+  const {location} = route.params;
   const mapRef = useRef<MapView>(null);
   const {email} = useProfileStore();
 
@@ -39,14 +43,9 @@ export const MyGeoScreen = () => {
   };
 
   useEffect(() => {
-    getCurrentLocation();
-  }, []);
-
-  useEffect(() => {
     navigation.setOptions({
-      headerLeft: () => null,
       headerRight: () => null,
-      title: 'Choose my geo',
+      title: 'Change geo',
       headerTitleStyle: {
         fontSize: 24,
         fontWeight: '700',
@@ -56,7 +55,7 @@ export const MyGeoScreen = () => {
 
   const onChooseGeo = async () => {
     try {
-      await chooseLocationRequest({
+      await changeLocationRequest({
         email: email,
         location: region,
       });
@@ -73,6 +72,7 @@ export const MyGeoScreen = () => {
         ref={mapRef}
         style={styles.map}
         mapType={MAP_TYPES.TERRAIN}
+        initialRegion={location}
         onRegionChange={setRegion}>
         <Marker coordinate={region} />
       </MapView>
@@ -81,7 +81,7 @@ export const MyGeoScreen = () => {
         hitSlop={8}
         style={styles.reset_btn}
         onPress={getCurrentLocation}>
-        <Text style={styles.btn_text}>Reset map</Text>
+        <Text style={styles.btn_text}>Reset to current geo</Text>
       </TouchableOpacity>
 
       <TouchableOpacity

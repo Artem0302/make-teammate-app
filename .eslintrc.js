@@ -47,6 +47,7 @@ module.exports = {
           '**/date-fns/*',
           '**/crypto-js/**',
           '**/@react-native-firebase/**',
+          '**/firebase/**',
         ],
       },
     ],
@@ -56,7 +57,7 @@ module.exports = {
     'react/display-name': 'off',
     // new from Andry,
     'no-console': 'warn',
-    'react/jsx-newline': ['warn', { prevent: true, allowMultilines: true }],
+    'react/jsx-newline': ['warn', {prevent: true, allowMultilines: true}],
     'padding-line-between-statements': [
       'warn',
       {
@@ -105,4 +106,4 @@ module.exports = {
       },
     ],
   },
-}
+};

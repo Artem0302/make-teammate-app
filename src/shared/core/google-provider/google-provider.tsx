@@ -1,9 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {ReactNode, useContext, useEffect, useState} from 'react';
+import React, {ReactNode, useContext, useEffect, useRef} from 'react';
 
+import {Alert} from 'react-native';
 import {authorize, refresh} from 'react-native-app-auth';
-import {addTokenInHeaders, instance} from '@shared/api';
-import {retrieveCred, storeCred} from '@shared/helpers';
+import {useProfileStore} from '@entities/profile';
+import {addTokenInHeaders, getUserGoogleInfo, instance} from '@shared/api';
+import {formatDate, retrieveCred, storeCred} from '@shared/helpers';
 import {TWelcomeScreenNavigatorType} from '@shared/types';
 import {googleConfig} from './model/google-config';
 
@@ -22,33 +24,59 @@ interface IGoogleProvider {
 
 export function GoogleProvider(props: IGoogleProvider) {
   const navigation = useNavigation<TWelcomeScreenNavProp>();
-  const [refresh_token, setRefresh_token] = useState('');
+  const refresh_token = useRef('');
+  const setEmail = useProfileStore(state => state.setEmail);
+  const setBirth = useProfileStore(state => state.setBirth);
+  const setName = useProfileStore(state => state.setName);
+  const setUrl = useProfileStore(state => state.setUrl);
+
+  const emailRequest = async () => {
+    const response = await getUserGoogleInfo();
+
+    setEmail(response.emailAddresses[0].value);
+
+    setBirth(formatDate(response.birthdays[0].date));
+
+    setName(response.names[0].displayName);
+
+    setUrl(response.photos[0].url);
+  };
 
   const authHandler = async () => {
-    const refreshToken = await retrieveCred();
+    try {
+      const refreshToken = await retrieveCred();
 
-    if (refreshToken) {
-      setRefresh_token(refreshToken);
+      if (refreshToken) {
+        refresh_token.current = refreshToken;
 
-      return navigation.navigate('MAIN.TAB_NAVIGATOR');
+        await emailRequest();
+
+        return navigation.navigate('MAIN.TAB_NAVIGATOR');
+
+        // return navigation.navigate('MAIN.MY_GEO_SCREEN');
+      }
+
+      // Log in to get an authentication token
+      const authState = await authorize(googleConfig);
+
+      refresh_token.current = refreshToken;
+
+      await storeCred({
+        refresh_token: authState.refreshToken,
+        access_token: authState.accessToken,
+      });
+      // Refresh token
+
+      addTokenInHeaders(`Bearer ${authState.accessToken}`);
+
+      // console.log('result', authState);
+
+      await emailRequest();
+
+      navigation.navigate('MAIN.MY_GEO_SCREEN');
+    } catch (e) {
+      Alert.alert('Something went wrong');
     }
-
-    // Log in to get an authentication token
-    const authState = await authorize(googleConfig);
-
-    setRefresh_token(authState.refreshToken);
-
-    await storeCred({
-      refresh_token: authState.refreshToken,
-      access_token: authState.accessToken,
-    });
-    // Refresh token
-
-    addTokenInHeaders(`Bearer ${authState.accessToken}`);
-
-    // console.log('result', authState);
-
-    navigation.navigate('MAIN.MY_GEO_SCREEN');
   };
 
   useEffect(() => {
@@ -59,7 +87,7 @@ export function GoogleProvider(props: IGoogleProvider) {
       async error => {
         if (error.response?.data.error.status === 'UNAUTHENTICATED') {
           const newTokens = await refresh(googleConfig, {
-            refreshToken: refresh_token,
+            refreshToken: refresh_token.current,
           });
 
           addTokenInHeaders(newTokens.accessToken);

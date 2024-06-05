@@ -1,11 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  modal_content: {
+  container: {
+    height: '70%',
+    backgroundColor: '#FFF',
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
-    height: '60%',
-    backgroundColor: '#FFF',
+  },
+  modal_content: {
+    flex: 1,
   },
   scrollview: {
     flex: 1,
@@ -33,6 +36,12 @@ export const styles = StyleSheet.create({
     color: '#000',
     fontWeight: '500',
   },
+  header_birth: {
+    marginLeft: 8,
+    fontSize: 18,
+    color: '#000',
+    fontWeight: '400',
+  },
   body: {
     flex: 1,
     paddingHorizontal: 16,
@@ -43,9 +52,8 @@ export const styles = StyleSheet.create({
     fontWeight: '400',
   },
   footer: {
-    flexDirection: 'row',
     paddingVertical: 16,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   btn: {
     paddingVertical: 8,
@@ -60,5 +68,23 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     color: '#000',
+  },
+  input_wrapper: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    width: '100%',
+    backgroundColor: 'white',
+    padding: 8,
+  },
+  input: {
+    flex: 1,
+    height: 40,
+    borderColor: '#D3D3D3',
+    borderRadius: 8,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+  },
+  send_btn: {
+    marginLeft: 10,
   },
 });

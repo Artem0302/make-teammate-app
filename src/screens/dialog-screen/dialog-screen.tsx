@@ -1,5 +1,5 @@
 import {useHeaderHeight} from '@react-navigation/elements';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
   FlatList,
@@ -10,8 +10,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {IMessageComponent, useDialogStore} from '@entities/dialog';
-import {getCurrentTime} from '@shared/helpers';
+import {IMessageComponent, useChatStore} from '@entities/chat';
+import {useProfileStore} from '@entities/profile';
+import {useSocketContext} from '@shared/core';
+import {formatTimeString, getOtherEmail} from '@shared/helpers';
 import {TDialogScreenNavigatorType} from '@shared/types';
 import SendIcon from './assets/icon-send.svg';
 import {MessageComponent} from './components';
@@ -19,12 +21,30 @@ import {styles} from './dialog-screen.styles';
 
 type TDialogScreenNavProp = TDialogScreenNavigatorType['navigation'];
 
+type TDialogScreenRouteProp = TDialogScreenNavigatorType['route'];
+
 export const DialogScreen = () => {
   const navigation = useNavigation<TDialogScreenNavProp>();
+  const route = useRoute<TDialogScreenRouteProp>();
+  const {chatId, name} = route.params;
+  const userEmail = useProfileStore(state => state.email);
   const headerHeight = useHeaderHeight();
   const [text, setText] = useState('');
+  const {socket} = useSocketContext();
+  const allChats = useChatStore(state => state.chats);
 
-  const {messages, addMessage} = useDialogStore();
+  const chat = allChats.find(el => el.chatId === chatId) || allChats[0];
+
+  const recipient = getOtherEmail(chat.emails, userEmail) ?? '';
+
+  const sendMessage = (content: string) => {
+    socket?.emit('sendMessage', {
+      chatId: chat.chatId,
+      sender: userEmail,
+      recipient,
+      content,
+    });
+  };
 
   useEffect(() => {
     navigation.setOptions({
@@ -37,20 +57,24 @@ export const DialogScreen = () => {
         fontSize: 24,
         fontWeight: '700',
       },
-      title: 'Name',
+      title: name,
     });
   }, [navigation]);
 
   const renderItem = ({item}: {item: IMessageComponent}) => {
     return (
-      <MessageComponent type={item.type} text={item.text} time={item.time} />
+      <MessageComponent
+        type={recipient === item.sender ? 'in' : 'out'}
+        text={item.content}
+        time={formatTimeString(item.timestamp)}
+      />
     );
   };
 
   const onSendHandler = () => {
     setText('');
 
-    addMessage({time: getCurrentTime(), text: text, type: 'out'});
+    sendMessage(text);
   };
 
   return (
@@ -60,13 +84,20 @@ export const DialogScreen = () => {
         style={styles.container}
         keyboardVerticalOffset={headerHeight}>
         <View style={styles.wrapper}>
-          <FlatList data={messages} renderItem={renderItem} inverted />
+          <FlatList
+            keyExtractor={item => item.timestamp}
+            data={chat.messages}
+            renderItem={renderItem}
+            inverted
+          />
 
           <View style={styles.input_wrapper}>
             <TextInput
               value={text}
               onChangeText={setText}
               style={styles.input}
+              returnKeyType="send"
+              onSubmitEditing={onSendHandler}
             />
 
             <TouchableOpacity

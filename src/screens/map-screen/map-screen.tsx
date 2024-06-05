@@ -1,9 +1,11 @@
 import Geolocation from '@react-native-community/geolocation';
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Text, TouchableOpacity, View} from 'react-native';
 import MapView, {MAP_TYPES, Marker} from 'react-native-maps';
 import Modal from 'react-native-modal';
+import {useProfileStore} from '@entities/profile';
+import {getLocations} from '@shared/api';
 import {TMapScreenNavigatorType} from '@shared/types';
 import {MapMarker, ProfileModal} from './components';
 import {styles} from './map-screen.styles';
@@ -15,20 +17,18 @@ interface ICoordinates {
   longitude: number;
 }
 
+interface IMarkers {
+  email: string;
+  location: ICoordinates;
+}
+
 export const MapScreen = () => {
   const navigation = useNavigation<TMapScreenNavProp>();
   const mapRef = useRef<MapView>(null);
+  const email = useProfileStore(state => state.email);
+  const recipient = useRef('');
 
-  // const [region, setRegion] = useState<LatLng>({
-  //   latitude: 37.781944757964496,
-  //   longitude: -122.40860725396615,
-  // });
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [markers, setMarkers] = useState<ICoordinates[]>([
-    {latitude: 37.781944757964496, longitude: -122.40860725396615},
-    {latitude: 37.684016503057364, longitude: -122.28640008250622},
-  ]);
+  const [markers, setMarkers] = useState<IMarkers[]>([]);
 
   const [isModal, setIsModal] = useState(false);
 
@@ -37,10 +37,6 @@ export const MapScreen = () => {
   const getCurrentLocation = () => {
     Geolocation.getCurrentPosition(info => {
       if (mapRef.current) {
-        // setRegion({
-        //   latitude: info.coords.latitude,
-        //   longitude: info.coords.longitude,
-        // });
         mapRef.current.animateToRegion({
           latitude: info.coords.latitude,
           longitude: info.coords.longitude,
@@ -53,6 +49,12 @@ export const MapScreen = () => {
 
   useEffect(() => {
     getCurrentLocation();
+
+    getLocations(email)
+      .then(r => {
+        setMarkers(r);
+      })
+      .catch(() => Alert.alert('Something went wrong'));
   }, []);
 
   useEffect(() => {
@@ -75,8 +77,15 @@ export const MapScreen = () => {
         // onRegionChange={setRegion}
       >
         {markers.map((marker, id) => (
-          <Marker key={id} coordinate={marker} onPress={() => setIsModal(true)}>
-            <MapMarker />
+          <Marker
+            key={id}
+            coordinate={marker.location}
+            onPress={() => {
+              recipient.current = marker.email;
+
+              setIsModal(true);
+            }}>
+            <MapMarker recipient={marker.email} />
           </Marker>
         ))}
 
@@ -90,7 +99,7 @@ export const MapScreen = () => {
         onBackdropPress={closeModal}
         onSwipeComplete={closeModal}
         swipeDirection={['down']}>
-        <ProfileModal closeModal={closeModal} />
+        <ProfileModal closeModal={closeModal} recipient={recipient.current} />
       </Modal>
 
       <TouchableOpacity
